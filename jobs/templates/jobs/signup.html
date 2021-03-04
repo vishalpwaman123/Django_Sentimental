@@ -1,0 +1,68 @@
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<style>
+	.text_container{
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+      }
+</style>
+
+<div class="container text_container">
+
+<hr>
+
+
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="card">
+<header class="card-header">
+	<a href={% url 'login' %} class="float-right btn btn-outline-primary mt-1">Log in</a>
+	<h4 class="card-title mt-2">Sign up</h4>
+	<div class="border-top card-body text-center">{{error}}<a></a></div><br>
+</header>
+<article class="card-body">
+<form method='POST' action="{% url 'signup' %}">
+	{% csrf_token %}
+	<div class="form-row">
+		<div class="col form-group">
+			<label>Username </label>   
+		  	<input type="text" class="form-control" placeholder="eg. Shraddha" name="username">
+		</div> <!-- form-group end.// -->
+		</div> <!-- form-row end.// -->
+	<div class="form-group">
+		<label>Email address</label>
+		<input type="email" class="form-control" placeholder="eg. vishalpwaman123@gmail.com" name='email'>
+		</div> 
+	
+	
+		<div class="form-group">
+		<label>Create password</label>
+	    <input class="form-control" type="password" name="password">
+	</div> 
+		<div class="form-group">
+		<label>Confirm Password</label>
+	    <input class="form-control" type="password" name="password1">
+	</div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> Register  </button>
+    </div> 
+    
+                                              
+</form>
+</article> <!-- card-body end .// -->
+<div class="border-top card-body text-center">Have an account? <a href={% url 'login' %}>Log In</a></div>
+</div> <!-- card.// -->
+</div> <!-- col.//-->
+
+</div> <!-- row.//-->
+
+
+</div> 
+
+<br><br>
+<article class="bg-secondary mb-3">  
+</article>
+{% endblock %}

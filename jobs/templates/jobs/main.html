@@ -1,0 +1,106 @@
+{% block content %}
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <title>Homepage</title>
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .jumbotron-heading{
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+      }
+
+      .card-title{
+        font-weight: 600;
+        font-size: large;
+        font-family: 'Snell Roundhand', cursive;
+      }
+
+      .card-content{
+        margin: 10px;
+      }
+
+      .card{
+        padding: 10px 20px 20px 20px;
+      }
+    </style>
+   
+  </head>
+  <body>
+    <header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <a class="nav-item nav-link active jumbotron-heading"  href={% url 'home' %}>Logout<span class="sr-only">(current)</span></a>
+ 
+</nav>
+</header>
+
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Sentimental Analysis</h1>
+      <p class="lead text-muted"</p>
+      <p>
+
+    <div class="col">
+    <div class="col s12 m6 14">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title jumbotron-heading">Video Operation</span>
+        </div>
+        <div class="card-action">
+          <a href={% url 'video' %} class="btn btn-primary my-2 jumbotron-heading">Video File</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br>
+<br>
+        <div class="col">
+    <div class="col s12 m6 14">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title jumbotron-heading">Audio Operation</span>
+        </div>
+        <div class="card-action">
+           <a href={% url 'audio' %} class="btn btn-secondary my-2 jumbotron-heading">Audio File</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+      </p>
+    </div>
+  </section>
+
+<div class="row-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em" class="jumbotron-heading">ON Audio And Video</text></svg>
+            <div class="card-body">
+              <p class="card-text">
+            </div>
+          </div>
+        </div>
+
+</main>
+</body>
+</html>
+{% endblock %}

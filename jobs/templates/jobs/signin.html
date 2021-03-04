@@ -1,0 +1,60 @@
+{% block content %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<style>
+	.text_container{
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+      }
+</style>
+
+<div class="container">
+
+<hr>
+
+
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="card">
+<header class="card-header">
+	<h4 class="card-title mt-2 text_container" href={% url 'login' %}>Sign In</h4>
+	<div class="border-top card-body text-center">{{error}}<a></a></div><br>
+	
+</header>
+<article class="card-body">
+<form method='POST' action="{% url 'login' %}">{% csrf_token %}
+	
+	<div class="form-row">
+		<div class="col form-group text_container">
+			<label>Username</label>   
+		  	<input type="text" class="form-control" placeholder="" name="username1">
+		</div> 
+		</div> 
+	
+	
+		<div class="form-group text_container">
+		<label>password</label>
+	    <input class="form-control" type="password" name="password">
+	</div> 
+		
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block text_container"> Sign In  </button>
+    </div>      
+                                              
+</form>
+</article> 
+<div class="border-top card-body text-center text_container">Have an account? <a href={% url 'signup' %}>Sign Up</a></div>
+</div> 
+</div> 
+</div> 
+
+
+</div> 
+
+<br><br>
+<article class="bg-secondary mb-3">  
+</article>
+{% endblock %}

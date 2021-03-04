@@ -1,0 +1,11 @@
+--------------------------------------
+pip install pydub
+
+converting mp3 to wav
+
+https://pythonbasics.org/convert-mp3-to-wav/
+
+-------------------------------------
+
+Set ffmpeg Enviroment in Path
+
