@@ -1,94 +1,157 @@
 {% block content %}
 <!doctype html>
 <html lang="en">
-  <head>
-   
-    <title>Result</title>
-    
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<head>
+
+  <title>Result</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .button_div{
+      /* height: 20%; */
+      margin-top: 50px;
+      width: 100%;
+      /* border: 1px solid lightgray; */
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
+    }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+    .button {
+      border-radius: 4px;
+      background-color: #f4511e;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 15px;
+      padding: 20px;
+      width: 250px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
 
-      .text_container{
-        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-      }
-    </style>
-   
-  </head>
-  <body>
-    <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-   
- 
-</nav>
-</header>
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
 
-<main role="main">
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading text_container">Sentimental Analysis</h1>
-      <p class="lead text-muted"</p>
-      <p>
+    .button span a {
+      color: white;
+    }
 
-    <div class="col">
-    <div class="col s12 m6 14">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title text_container">Positive Result</span>
-          <p> 
-            {% if Positive %}
-           <a href="{{ Positive }}" class="text_container">{{ Positive }}</a>
-            {% endif %}</p>
-        </div>
-      </div>
-    </div>
-  </div>
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
 
-<br>
-<br>
+    .button:hover span {
+      padding-right: 25px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+
+    .text_container {
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+
+    </nav>
+  </header>
+
+  <main role="main">
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading text_container">Sentimental Analysis</h1>
+        <p class="lead text-muted" </p>
+        <p>
+
         <div class="col">
-    <div class="col s12 m6 14">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title text_container">Negative Result</span>
-          <p>
-            {% if Negative %}
-          <a href="{{ Negative }}" class="text_container">{{ Negative }}</a>
-            {% endif %}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-      </p>
-    </div>
-  </section>
-
-<div class="row-md-4">
-          <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em" class="text_container">ON Audio And Video</text></svg>
-            <div class="card-body">
-              <p class="card-text">
+          <div class="col s12 m6 14">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title text_container">Positive Result</span>
+                <p>
+                  {% if Positive %}
+                  <a href="{{ Positive }}" class="text_container">{{ Positive }}</a>
+                  {% endif %}
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-</main>
+        <br>
+        <br>
+        <div class="col">
+          <div class="col s12 m6 14">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title text_container">Negative Result</span>
+                <p>
+                  {% if Negative %}
+                  <a href="{{ Negative }}" class="text_container">{{ Negative }}</a>
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button_div">
+        <button class="button"><span ><a href={% url 'main' %}>Opetion Analysis Page</a></span></button>
+        </div>
+        </p>
+      </div>
+    </section>
+
+    <div class="row-md-4">
+      <div class="card mb-4 shadow-sm">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+
+          <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"
+            class="text_container"></text>
+        </svg>
+        <div class="card-body">
+          <p class="card-text">
+        </div>
+      </div>
+    </div>
+
+  </main>
 </body>
+
 </html>
 {% endblock %}
